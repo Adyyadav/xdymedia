@@ -1,0 +1,375 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand palette — metallic silver system (same as v1) */
+  --silver: #f4f4f4;
+  --silver-2: #d0d0d0;
+  --silver-3: #b0b0b0;
+  --silver-blue: #c2ccd6;
+
+  /* Surfaces — charcoal */
+  --bg: #0a0a0a;
+  --bg-2: #111111;
+  --surface: #1a1a1a;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-2: rgba(255, 255, 255, 0.2);
+
+  /* Text */
+  --text: #ffffff;
+  --text-2: #c0c0c0;
+  --text-3: #909090;
+
+  /* Feedback */
+  --ok: #4d9c7c;
+  --warn: #b8860b;
+  --danger: #b05555;
+
+  /* Accents (unchanged from v1, used per-service) */
+  --wa-green: #25d366;
+  --tg-blue: #38bdf8;
+  --web3-purple: #c084fc;
+  --mint: #a7f3d0;
+  --recovery-red: #f87171;
+  --red: #f87171;
+  --ofm-blue: #00aff0;
+  --ofm-cyan: #00c6ff;
+  --ofm-light: #f2fbff;
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jbmono);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-silver: var(--silver);
+  --color-silver-2: var(--silver-2);
+  --color-silver-3: var(--silver-3);
+  --color-silver-blue: var(--silver-blue);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-danger: var(--danger);
+  --color-wa-green: var(--wa-green);
+  --color-tg-blue: var(--tg-blue);
+  --color-web3-purple: var(--web3-purple);
+  --color-mint: var(--mint);
+  --color-recovery-red: var(--recovery-red);
+  --color-red: var(--recovery-red);
+  --color-ofm-blue: var(--ofm-blue);
+  --color-ofm-cyan: var(--ofm-cyan);
+  --color-ofm-light: var(--ofm-light);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jbmono);
+}
+
+/* Base element resets live in Tailwind's own "base" layer, same as its
+   preflight — NOT left unlayered. Unlayered CSS always beats layered CSS in
+   the cascade regardless of specificity, which was silently defeating
+   utility classes like text-black/font-extrabold whenever they were applied
+   to a plain element (e.g. every <a> button rendered white/invisible text
+   on light backgrounds because this a{} rule out-ranked the text-black
+   utility). See also: same root cause as the earlier backdrop-filter fix. */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h1, h2, h3, h4 {
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background: var(--silver);
+    color: #0a0a0a;
+  }
+}
+
+/* Ambient background: soft glow + faint grid, gives glass surfaces something to refract */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60% 50% at 15% -10%, rgba(56, 189, 248, 0.12), transparent 60%),
+    radial-gradient(50% 40% at 100% 0%, rgba(192, 132, 252, 0.1), transparent 60%),
+    radial-gradient(60% 45% at 50% 100%, rgba(77, 156, 124, 0.08), transparent 60%),
+    var(--bg);
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 40%, transparent 100%);
+  pointer-events: none;
+}
+
+.grad-text {
+  background: linear-gradient(135deg, #f4f4f4 0%, #d0d0d0 45%, #a8a8a8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgba(232, 232, 232, 0.3));
+}
+
+/* ---------- Glassmorphism primitives ---------- */
+.glass {
+  @apply backdrop-blur-2xl backdrop-saturate-150;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 20px 50px -20px rgba(0, 0, 0, 0.6);
+}
+
+.glass-strong {
+  @apply backdrop-blur-3xl backdrop-saturate-150;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* For floating overlays (dropdowns, mobile menu, modals) that sit ON TOP of
+   other page content — needs a solid dark base so text underneath can't
+   ghost through, unlike .glass/.glass-strong which are meant to be embedded
+   in the page and let the ambient background show through. */
+.glass-panel {
+  @apply backdrop-blur-3xl backdrop-saturate-150;
+  background: linear-gradient(160deg, rgba(17, 17, 19, 0.97), rgba(10, 10, 11, 0.96));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 24px 60px -20px rgba(0, 0, 0, 0.85);
+}
+
+.glass-spot {
+  position: relative;
+}
+.glass-spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx, -500px) var(--my, -500px), rgba(255, 255, 255, 0.12), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.glass-spot:hover::before {
+  opacity: 1;
+}
+
+/* ---------- Reveal-on-scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Animations ---------- */
+@keyframes growBar {
+  0%, 100% { transform: scaleY(0.5); opacity: 0.6; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(167, 243, 208, 0.5); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(167, 243, 208, 0); }
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 8px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.22); }
+
+/* ---------- Prose (legal pages) ---------- */
+.prose h2 { font-size: 1.4rem; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+.prose h3 { font-size: 1.1rem; margin-top: 20px; margin-bottom: 8px; color: var(--text); }
+.prose p { color: var(--text-2); margin-bottom: 12px; line-height: 1.7; }
+.prose a { color: var(--silver-blue); text-decoration: underline; text-underline-offset: 3px; }
+.prose ul { list-style: disc; padding-left: 1.3em; color: var(--text-2); margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+.prose ul li::marker { color: var(--text-3); }
+.prose b, .prose strong { color: var(--text); }
+
+/* ---------- First-visit splash screen ---------- */
+html.xdy-splash {
+  overflow: hidden;
+}
+#xdy-splash {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s;
+}
+html.xdy-splash #xdy-splash {
+  display: flex;
+}
+#xdy-splash.is-leaving {
+  opacity: 0;
+  transform: scale(1.04);
+  visibility: hidden;
+  pointer-events: none;
+}
+.xdy-splash-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(50% 40% at 50% 45%, rgba(56, 189, 248, 0.14), transparent 70%),
+    radial-gradient(40% 35% at 70% 60%, rgba(192, 132, 252, 0.1), transparent 70%);
+}
+.xdy-splash-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+  animation: splashIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.xdy-splash-logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 132px;
+  height: 132px;
+}
+.xdy-splash-img {
+  border-radius: 9999px;
+  box-shadow: 0 0 40px -6px rgba(255, 255, 255, 0.25);
+}
+.xdy-splash-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.9);
+  border-right-color: rgba(56, 189, 248, 0.6);
+  animation: splashSpin 1.3s linear infinite;
+}
+.xdy-splash-ring-2 {
+  inset: 10px;
+  border-top-color: rgba(192, 132, 252, 0.7);
+  border-right-color: transparent;
+  border-left-color: rgba(255, 255, 255, 0.25);
+  animation-duration: 2s;
+  animation-direction: reverse;
+}
+.xdy-splash-name {
+  margin-top: 28px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #f4f4f4 0%, #d0d0d0 45%, #a8a8a8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.xdy-splash-tag {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.xdy-splash-bar {
+  margin-top: 28px;
+  width: 180px;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.xdy-splash-bar i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--tg-blue), var(--silver), var(--web3-purple));
+  transform-origin: left;
+  animation: splashFill 1.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes splashSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes splashFill {
+  from { transform: scaleX(0.04); }
+  to { transform: scaleX(1); }
+}
+@keyframes splashIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .xdy-splash-ring,
+  .xdy-splash-bar i,
+  .xdy-splash-inner {
+    animation: none;
+  }
+  .xdy-splash-bar i {
+    transform: none;
+  }
+}
+
+/* Custom sleek scrollbar for mega menu slide down container */
+.mega-menu-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.mega-menu-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.mega-menu-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+.mega-menu-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
