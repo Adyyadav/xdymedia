@@ -43,7 +43,7 @@ export const SERVICES = [
     short: "Verification Concierge",
     desc: "Official Meta Blue Tick setup (Instagram & Facebook) and WhatsApp Official Business Account (Green Badge) verification assistance with fast turnaround.",
     pillar: "social",
-    accent: "tg-blue",
+    accent: "bluetick",
     count: "03",
     featured: true,
     ctaLabel: "Get Verified",

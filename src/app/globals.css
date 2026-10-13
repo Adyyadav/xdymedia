@@ -34,6 +34,7 @@
   --ofm-blue: #00aff0;
   --ofm-cyan: #00c6ff;
   --ofm-light: #f2fbff;
+  --bluetick: #0095f6;
 
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jbmono);
@@ -63,6 +64,7 @@
   --color-ofm-blue: var(--ofm-blue);
   --color-ofm-cyan: var(--ofm-cyan);
   --color-ofm-light: var(--ofm-light);
+  --color-bluetick: var(--bluetick);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jbmono);
 }

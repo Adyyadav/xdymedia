@@ -10,7 +10,14 @@ export const SERVICE_CONTENT = {
       "Official Meta Blue Tick verification (Instagram & Facebook) and WhatsApp Official Business Account (Green Badge) verification concierge. Fast turnaround, zero login credentials required.",
     hero: {
       eyebrow: "Official Platform Verification ★",
-      title: <>Meta &amp; WhatsApp <span className="grad-text">Verification Concierge</span></>,
+      title: (
+        <>
+          Meta &amp; WhatsApp{" "}
+          <span className="bg-gradient-to-r from-[#0095F6] via-[#38bdf8] to-[#0095F6] bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(0,149,246,0.4)]">
+            Verification Concierge
+          </span>
+        </>
+      ),
       subhead:
         "Fast-track your verified status on Instagram, Facebook, and WhatsApp. We assist public figures, creators, executives, and growing brands in securing official Blue and Green badges through legitimate compliance pathways — with zero login credentials required.",
       ctaPrimary: { label: "Apply for Verification", href: "/contact" },

@@ -1,6 +1,14 @@
 // Literal Tailwind class strings per accent (Tailwind's scanner needs whole
 // tokens present in source, so these can't be built with template strings).
 export const ACCENT = {
+  bluetick: {
+    text: "text-[#0095F6]",
+    border: "border-[#0095F6]/40",
+    borderHover: "hover:border-[#0095F6]/70",
+    bg: "bg-[#0095F6]/10",
+    glow: "shadow-[0_0_30px_-6px_rgba(0,149,246,0.5)]",
+    dot: "bg-[#0095F6]",
+  },
   silver: {
     text: "text-silver-2",
     border: "border-white/10",

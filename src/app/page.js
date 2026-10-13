@@ -79,6 +79,20 @@ const PILLARS = [
 ];
 
 const PILLAR_CARD_THEMES = {
+  bluetick: {
+    featuredCard:
+      "border-[#0095F6]/50 bg-gradient-to-br from-white/[0.12] via-white/[0.04] to-[#0095F6]/[0.12] shadow-[0_0_35px_-6px_rgba(0,149,246,0.45)] hover:border-[#0095F6]/80 hover:shadow-[0_16px_40px_-6px_rgba(0,149,246,0.55)]",
+    normalCard:
+      "border-[#0095F6]/30 bg-gradient-to-br from-white/[0.06] to-white/[0.02] hover:border-[#0095F6]/55 hover:shadow-[0_12px_32px_-10px_rgba(0,149,246,0.3)]",
+    countText: "text-[#0095F6]",
+    titleHover: "group-hover:text-[#0095F6]",
+    badgeBorder: "border-[#0095F6]/50",
+    badgeBg: "bg-[#0095F6]/15",
+    badgeText: "text-[#0095F6]",
+    badgeDot: "bg-[#0095F6] shadow-[0_0_8px_#0095F6]",
+    iconBox: "border-[#0095F6]/40 bg-[#0095F6]/15 text-[#0095F6] shadow-[0_0_12px_rgba(0,149,246,0.3)]",
+    linkText: "text-[#0095F6]",
+  },
   // 1 to 6: Blue theme (tg-blue, same as Pillar 1)
   "tg-blue": {
     featuredCard:
@@ -312,11 +326,19 @@ export default function Home() {
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => {
+              // platform-verification uses distinct bluetick theme
               // 1 to 7 (index 0-6): Blue theme (tg-blue)
               // 8 to 13 (index 7-12): Green theme (wa-green)
               // 14 to 19 (index 13-18): Purple theme (web3-purple)
-              const themeKey = i < 7 ? "tg-blue" : i < 13 ? "wa-green" : "web3-purple";
-              const theme = PILLAR_CARD_THEMES[themeKey];
+              const themeKey =
+                s.accent === "bluetick" || s.slug === "platform-verification"
+                  ? "bluetick"
+                  : i < 7
+                  ? "tg-blue"
+                  : i < 13
+                  ? "wa-green"
+                  : "web3-purple";
+              const theme = PILLAR_CARD_THEMES[themeKey] || PILLAR_CARD_THEMES["tg-blue"];
               return (
                 <Reveal key={s.slug} delay={(i % 3) * 0.07}>
                   <div
@@ -480,7 +502,7 @@ export default function Home() {
 
 function ServiceIcon({ slug }) {
   const paths = {
-    "platform-verification": "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    "platform-verification": "M12 2l2.4 2.5 3.4-.6 1.4 3.1 3.2 1.3-.7 3.4 2.1 2.8-2.1 2.8.7 3.4-3.2 1.3-1.4 3.1-3.4-.6L12 22l-2.4-2.5-3.4.6-1.4-3.1-3.2-1.3.7-3.4L.2 9.5l2.1-2.8-.7-3.4 3.2-1.3 1.4-3.1 3.4.6L12 2zm-1.5 13.5l6-6-1.4-1.4-4.6 4.6-2.1-2.1-1.4 1.4 3.5 3.5z",
     "website-development": "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
     "whatsapp-automation": "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
     "n8n-automation": "M4 4h4v4H4V4zm12 0h4v4h-4V4zM4 16h4v4H4v-4zm12 0h4v4h-4v-4zM8 6h8M6 8v8m12-8v8M8 18h8",
