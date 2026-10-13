@@ -10,6 +10,7 @@ const CONSULTATION_TOPICS = [
   ["web-arch", "Web App Architecture, Next.js & Cloud Infrastructure"],
   ["n8n-ai", "n8n Automation, LangChain & Autonomous AI Workflows"],
   ["recovery", "Account Recovery, Suspension Appeal & Risk Escalation"],
+  ["verification", "Meta & WhatsApp Verification Concierge (Blue Tick / Green Badge)"],
   ["omnichannel", "Omnichannel Growth Engine (Web + WA + Telegram)"],
   ["growth-audit", "Complete Digital Systems & Growth Audit"],
   ["other", "General Technical Strategy & Consultation"],

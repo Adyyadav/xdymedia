@@ -5,6 +5,111 @@
 // page stays structurally consistent and easy to edit in one place.
 
 export const SERVICE_CONTENT = {
+  "platform-verification": {
+    metaDescription:
+      "Official Meta Blue Tick verification (Instagram & Facebook) and WhatsApp Official Business Account (Green Badge) verification concierge. Fast turnaround, zero login credentials required.",
+    hero: {
+      eyebrow: "Official Platform Verification ★",
+      title: <>Meta &amp; WhatsApp <span className="grad-text">Verification Concierge</span></>,
+      subhead:
+        "Fast-track your verified status on Instagram, Facebook, and WhatsApp. We assist public figures, creators, executives, and growing brands in securing official Blue and Green badges through legitimate compliance pathways — with zero login credentials required.",
+      ctaPrimary: { label: "Apply for Verification", href: "/contact" },
+      ctaSecondary: { label: "Explore Requirements", href: "#capabilities" },
+    },
+    blocks: [
+      {
+        type: "notice",
+        title: "Zero Password & Credential Disclosure.",
+        text: "We never request passwords, login access, or SMS codes. Verification submissions are handled exclusively through verified business manager entities, official press compliance, and platform media support channels.",
+      },
+      {
+        type: "overview",
+        eyebrow: "Digital Trust & Conversion",
+        heading: "Verified status is your competitive advantage.",
+        paragraphs: [
+          "In modern social commerce and digital communication, official verification badges are more than status symbols — they are high-trust conversion catalysts. Accounts with official verification experience up to 400% higher message response rates, enhanced algorithmic visibility, and complete protection against brand impersonation.",
+          "XDY Media offers dedicated concierge support for Meta Verified, Notable Public Figure Blue Ticks, and WhatsApp Official Business Account (OBA) Green Badges, reviewing your entity eligibility and documentation before submission.",
+        ],
+        stats: [
+          { value: "0–4h", label: "WhatsApp OBA avg turnaround" },
+          { value: "0 Passwords", label: "Zero-credential security policy" },
+          { value: "24–48h", label: "Meta verification window" },
+        ],
+      },
+      {
+        type: "features",
+        eyebrow: "Verification Spectrum",
+        heading: <>Comprehensive Verification <span className="grad-text">Capabilities</span></>,
+        desc: "From creator blue checks to enterprise green tick badge setups, we navigate platform requirements end-to-end.",
+        items: [
+          {
+            title: "Instagram Blue Tick Verification",
+            desc: "Profile restructuring, notable press documentation, and official submission for public figures, creators, founders, and enterprises.",
+            bullets: ["Notable figure & media criteria audit", "Meta Verified for Business setup", "Anti-impersonation profile lock", "Express submission windows"],
+          },
+          {
+            title: "WhatsApp Official Business Account (Green Badge)",
+            desc: "Display your verified business name instead of an unknown phone number. Builds instantaneous trust for automated marketing and customer support.",
+            bullets: ["Phone number only required (no login access needed)", "Account must be active for 30+ days", "Average processing turnaround: 30 mins to 4 hours", "Meta Business Manager entity sync"],
+          },
+          {
+            title: "Facebook Page & Profile Verification",
+            desc: "Official verification for corporate parent pages, regional brand branches, executive profiles, and public organization portals.",
+            bullets: ["Legal entity documentation audit", "Official domain verification & Business Manager integration"],
+          },
+          {
+            title: "Media Press & Notability Architecture",
+            desc: "For accounts applying for Notable/Legacy verification, we assist in organizing genuine media press coverage, editorial mentions, and Google Knowledge Panels.",
+            bullets: ["Editorial press index review", "Search knowledge panel alignment"],
+          },
+          {
+            title: "Verified Handle & Name Updates",
+            desc: "Update your verified username, legal business name, or display title without risking badge revocation or account flag triggers.",
+            bullets: ["Safe change protocol compliance", "Direct escalation support"],
+          },
+          {
+            title: "Impersonator & Counterfeit Removal",
+            desc: "Protect your verified brand against malicious clone channels, scam bots, and fake profiles targeting your audience.",
+            bullets: ["Priority trademark & copyright reporting", "Fast-track impersonation takedown"],
+          },
+        ],
+      },
+      {
+        type: "flow",
+        eyebrow: "Official 4-Stage Protocol",
+        heading: "How Verification Is Handled",
+        desc: "A structured, secure, policy-compliant process built to minimize delays and maximize success rates.",
+        nodes: ["1. Account Pre-Check", "2. Documentation Assembly", "3. Official Meta / WhatsApp Submission", "4. Verified Badge Issuance ✔️"],
+      },
+      {
+        type: "techStack",
+        heading: "Supported Platforms & Official Channels",
+        desc: "We operate directly within established platform compliance infrastructure.",
+        columns: [
+          { title: "Meta Ecosystem", badges: ["Instagram Profiles", "Instagram Professional Accounts", "Facebook Pages", "Facebook Executive Profiles", "Meta Business Suite"] },
+          { title: "WhatsApp Cloud Platform", badges: ["WhatsApp Business API", "Official Business Account (OBA)", "Legacy Green Badge", "Cloud API Verification"] },
+          { title: "Security & Safeguards", badges: ["Zero Login Disclosure", "Escrow Settlement Supported", "Platform Policy Compliant", "Direct Documentation Escalation"] },
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          { q: "Do I need to give you my Instagram or WhatsApp password?", a: "No, never. We operate under a strict zero-credential policy. We never request passwords, two-factor authentication codes, or session tokens. Everything is executed via official business verification documents and authorized platform channels." },
+          { q: "What are the requirements for the WhatsApp Green Tick badge?", a: "The business phone number must be linked to an official WhatsApp Business API account, the business entity must be verified in Meta Business Manager, and the account should have active message history (typically 30+ days old). Turnaround times average 30 minutes to 4 hours during active intake sessions." },
+          { q: "How long does the Meta Blue Tick process take?", a: "Standard review turnaround is 24 to 48 hours from the time documentation is submitted. When express batch windows are active, turnaround can be completed within a few hours." },
+          { q: "What happens if an account was previously rejected for verification?", a: "Previous rejections are common if documentation was incomplete or profile formatting didn't meet Meta criteria. We perform a pre-check audit to address discrepancies before re-submitting." },
+          { q: "Can personal creators and executives get verified?", a: "Yes. Both individual public figures (founders, creators, athletes, artists) and registered corporate brands are eligible under distinct official criteria." },
+        ],
+      },
+      {
+        type: "cta",
+        heading: <>Ready to verify your <span className="grad-text">digital presence</span>?</>,
+        desc: "Contact our team for a fast pre-check eligibility review. We'll examine your account status and provide turnaround and documentation guidance within hours.",
+        primary: { label: "Start Verification Pre-Check", href: "/contact" },
+        secondary: { label: "WhatsApp Concierge", href: "https://wa.me/306970445764" },
+      },
+    ],
+  },
   "website-development": {
     metaDescription:
       "Custom business websites, web applications, e-commerce, APIs, and cloud infrastructure engineered for speed, conversions, and scalable growth.",

@@ -12,6 +12,7 @@ const QUOTE_SERVICES = [
   ["unified-engine", "Unified Digital Engine (Website + WhatsApp + Telegram)"],
   ["custom-software", "Custom Software, APIs & Client Portals"],
   ["account-recovery", "Account Recovery & Platform Escalation"],
+  ["platform-verification", "Meta & WhatsApp Verification Concierge"],
   ["seo-growth", "SEO, Content & Audience Growth Strategy"],
   ["multi", "Multi-Service / Custom Package"],
 ];

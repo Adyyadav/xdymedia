@@ -307,15 +307,15 @@ export default function Home() {
         <div className="mx-auto max-w-[1240px]">
           <SectionHead
             eyebrow="Complete Service Catalog"
-            title={<>All 18 Core <span className="grad-text">Digital Capabilities</span></>}
+            title={<>All 19 Core <span className="grad-text">Digital Capabilities</span></>}
             desc="Explore our complete spectrum of specialized digital services designed to automate operations, build infrastructure, and scale modern businesses."
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => {
-              // 1 to 6 (index 0-5): Blue theme (tg-blue)
-              // 7 to 12 (index 6-11): Green theme (wa-green)
-              // 13 to 18 (index 12-17): Purple theme (web3-purple)
-              const themeKey = i < 6 ? "tg-blue" : i < 12 ? "wa-green" : "web3-purple";
+              // 1 to 7 (index 0-6): Blue theme (tg-blue)
+              // 8 to 13 (index 7-12): Green theme (wa-green)
+              // 14 to 19 (index 13-18): Purple theme (web3-purple)
+              const themeKey = i < 7 ? "tg-blue" : i < 13 ? "wa-green" : "web3-purple";
               const theme = PILLAR_CARD_THEMES[themeKey];
               return (
                 <Reveal key={s.slug} delay={(i % 3) * 0.07}>
@@ -480,6 +480,7 @@ export default function Home() {
 
 function ServiceIcon({ slug }) {
   const paths = {
+    "platform-verification": "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
     "website-development": "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
     "whatsapp-automation": "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
     "n8n-automation": "M4 4h4v4H4V4zm12 0h4v4h-4V4zM4 16h4v4H4v-4zm12 0h4v4h-4v-4zM8 6h8M6 8v8m12-8v8M8 18h8",

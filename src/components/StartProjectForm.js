@@ -17,6 +17,7 @@ const SERVICE_OPTIONS = [
   ["seo", "SEO & Search Engine Authority"],
   ["creative", "Creative Studio & Visual Design"],
   ["recovery", "Account Recovery & Support Escalation"],
+  ["verification", "Meta & WhatsApp Verification Concierge (Blue Tick & Green Badge)"],
   ["content", "Content Marketing & Copywriting"],
   ["growth", "Growth Strategy & Performance Advisory"],
   ["custom", "Custom Software & Client Portals"],

@@ -38,13 +38,24 @@ export const SERVICES = [
     ctaLabel: "Get Account Support",
   },
   {
+    slug: "platform-verification",
+    title: "Meta & WhatsApp Verification",
+    short: "Verification Concierge",
+    desc: "Official Meta Blue Tick setup (Instagram & Facebook) and WhatsApp Official Business Account (Green Badge) verification assistance with fast turnaround.",
+    pillar: "social",
+    accent: "tg-blue",
+    count: "03",
+    featured: true,
+    ctaLabel: "Get Verified",
+  },
+  {
     slug: "telegram-management",
     title: "Telegram Management & Growth",
     short: "Telegram Management",
     desc: "Complete Telegram management — channel management, Telegram Ads, audience growth, content posting, subscription channel management, and monetisation support.",
     pillar: "social",
     accent: "tg-blue",
-    count: "03",
+    count: "04",
     featured: true,
     ctaLabel: "Explore Telegram Management",
   },
@@ -55,7 +66,7 @@ export const SERVICES = [
     desc: "Multi-channel audience growth, content calendar planning, community engagement, and brand building on Instagram, YouTube, and X.",
     pillar: "social",
     accent: "tg-blue",
-    count: "04",
+    count: "05",
     featured: false,
   },
   {
@@ -65,7 +76,7 @@ export const SERVICES = [
     desc: "Professional Instagram and Facebook management through Meta Business Suite — content scheduling, inbox management, analytics, Meta Ads workflows, and account administration.",
     pillar: "social",
     accent: "tg-blue",
-    count: "05",
+    count: "06",
     featured: false,
   },
   {
@@ -75,7 +86,7 @@ export const SERVICES = [
     desc: "Editorial strategy, thought leadership articles, brand storytelling, conversion copywriting, and audience retention funnels.",
     pillar: "social",
     accent: "tg-blue",
-    count: "06",
+    count: "07",
     featured: false,
   },
 
@@ -87,7 +98,7 @@ export const SERVICES = [
     desc: "Custom n8n automation systems connecting your apps, APIs, databases, AI models, and business tools into intelligent automated workflows.",
     pillar: "automation",
     accent: "wa-green",
-    count: "07",
+    count: "08",
     featured: true,
     ctaLabel: "Build My Automation",
   },
@@ -98,7 +109,7 @@ export const SERVICES = [
     desc: "Connect your business tools, CRMs, ERPs, payment gateways, and external databases with robust REST APIs and webhooks.",
     pillar: "automation",
     accent: "wa-green",
-    count: "08",
+    count: "09",
     featured: true,
     ctaLabel: "Explore API Services",
   },
@@ -109,7 +120,7 @@ export const SERVICES = [
     desc: "AI-powered customer support, automated lead qualification, LLM knowledge retrieval, and predictive business workflows.",
     pillar: "automation",
     accent: "wa-green",
-    count: "09",
+    count: "10",
     featured: true,
   },
   {
@@ -119,7 +130,7 @@ export const SERVICES = [
     desc: "Official WhatsApp Business Platform setups, automated customer journeys, AI chatbots, and multi-agent shared team inboxes.",
     pillar: "automation",
     accent: "wa-green",
-    count: "10",
+    count: "11",
     featured: false,
   },
   {
@@ -129,7 +140,7 @@ export const SERVICES = [
     desc: "Automate lead capture, CRM updates, follow-ups, and sales pipelines to turn inquiries into organized, actionable opportunities.",
     pillar: "automation",
     accent: "wa-green",
-    count: "11",
+    count: "12",
     featured: false,
   },
   {
@@ -139,7 +150,7 @@ export const SERVICES = [
     desc: "Automate repetitive business operations by connecting your tools, data, teams, and workflows into one efficient system.",
     pillar: "automation",
     accent: "wa-green",
-    count: "12",
+    count: "13",
     featured: false,
   },
 
@@ -151,7 +162,7 @@ export const SERVICES = [
     desc: "Custom business websites, corporate sites, high-converting landing pages, e-commerce engines, and secure cloud infrastructure built for speed.",
     pillar: "digital",
     accent: "web3-purple",
-    count: "13",
+    count: "14",
     featured: true,
   },
   {
@@ -161,7 +172,7 @@ export const SERVICES = [
     desc: "Technical SEO audits, high-intent keyword targeting, on-page optimization, and authoritative search ranking strategies.",
     pillar: "digital",
     accent: "web3-purple",
-    count: "14",
+    count: "15",
     featured: true,
   },
   {
@@ -171,7 +182,7 @@ export const SERVICES = [
     desc: "Data-driven acquisition roadmaps, conversion rate optimization, sales funnels, performance analytics, and retention systems.",
     pillar: "digital",
     accent: "web3-purple",
-    count: "15",
+    count: "16",
     featured: true,
   },
   {
@@ -181,7 +192,7 @@ export const SERVICES = [
     desc: "Bespoke web portals, client dashboards, subscription SaaS architectures, internal management tools, and custom CRMs.",
     pillar: "digital",
     accent: "web3-purple",
-    count: "16",
+    count: "17",
     featured: false,
   },
   {
@@ -191,7 +202,7 @@ export const SERVICES = [
     desc: "Brand visual identities, advertising creatives, campaign banners, social templates, and high-converting marketing collateral.",
     pillar: "digital",
     accent: "web3-purple",
-    count: "17",
+    count: "18",
     featured: false,
   },
   {
@@ -201,7 +212,7 @@ export const SERVICES = [
     desc: "Telegram, Discord & X community scaling, token-gated access, NFT holder verification, and crypto-native growth campaigns.",
     pillar: "digital",
     accent: "web3-purple",
-    count: "18",
+    count: "19",
     featured: false,
   },
 ];
@@ -324,6 +335,7 @@ export const MEGA_MENU = [
     pillarKey: "social",
     accent: "tg-blue",
     items: [
+      "platform-verification",
       "telegram-automation",
       "account-recovery",
       "telegram-management",
@@ -373,6 +385,7 @@ export const NAV_LINKS = [
 ];
 
 export const FOOTER_SERVICES = [
+  "platform-verification",
   "website-development",
   "whatsapp-automation",
   "n8n-automation",
